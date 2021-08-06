@@ -2,7 +2,10 @@ const http = require("http")
 const elements = require("./elements.json")
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "application/json" })
+  res.writeHead(200, {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  })
   res.end(JSON.stringify(elements))
 })
 
